@@ -1,2 +1,2 @@
 # uvic
-Projects and Research Uvic
+Project Reports and Code generated at University of Victoria.
