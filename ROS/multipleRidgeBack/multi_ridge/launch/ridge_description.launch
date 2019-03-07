@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="ns"        default="ridgeback"/>
+  <arg name="config" default="$(optenv RIDGEBACK_CONFIG empty)" />
+
+  <param name="/$(arg ns)/robot_description"
+         command="$(find ridgeback_description)/scripts/env_run
+                  $(find ridgeback_description)/urdf/configs/$(arg config)
+                  $(find xacro)/xacro $(find multi_ridge)/launch/ridge.urdf.xacro
+                  --inorder 'namespace:=$(arg ns)'" />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg ns)">
+	<param name="tf_prefix"         value="$(arg ns)"/>
+        <param name="robot_description" value="/$(arg ns)/robot_description"/>
+ </node>
+</launch>

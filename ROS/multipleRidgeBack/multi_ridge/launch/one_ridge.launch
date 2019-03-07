@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<!-- This is generates a Ridge in gazebo. It must have a unique namespace in 
+     order to generate multiple Ridges. The default position can be specified. -->
+     
+<launch>
+  <!-- Arguments to set the namespace, start position. -->
+  <arg name="ns"        default="ridge0"/>			<!-- Must be unique for each robot. -->
+  <arg name="x"         default="0"/>
+  <arg name="y"         default="0"/>
+  <arg name="z"         default="0"/>
+  <arg name="roll"      default="0"/>
+  <arg name="pitch"     default="0"/>
+  <arg name="yaw"       default="0"/>
+  <arg name="config"    default="base" /> 		<!-- options in description/urdf/configs-->
+  <arg name="config_id" default="0"/>
+  
+  <!-- Launch the control portion of the RidgeBack robot. -->
+  <include file="$(find multi_ridge)/launch/ridge_control.launch">
+    <arg name="ns" value="$(arg ns)"/>
+  </include>
+
+  <!-- Generate the model for gazebo and publish the robots joint states. -->
+  <include file="$(find multi_ridge)/launch/ridge_description.launch">
+    <arg name="ns"        value="$(arg ns)"/>
+    <arg name="config"    value="$(arg config)"/>
+  </include>
+
+<!-- Start the ridgeback navigation. -->
+  <!--<include file="$(find multi_ridge)/launch/ridge_nav.launch">
+    <arg name="ns"    value="$(arg ns)"/>
+    <arg name="x"     value="$(arg x)"/>
+    <arg name="y"     value="$(arg y)"/>
+    <arg name="z"     value="$(arg z)"/>
+    <arg name="roll"  value="$(arg roll)"/>
+    <arg name="pitch" value="$(arg pitch)"/>
+    <arg name="yaw"   value="$(arg yaw)"/>
+  </include>-->
+
+  <!-- Spawn the model into gazebo. -->
+  <node name="spawn_create_model" pkg="gazebo_ros" type="spawn_model" ns="$(arg ns)"
+    args="-x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)
+    -urdf -param /$(arg ns)/robot_description -model $(arg ns)"/>
+	
+</launch>
