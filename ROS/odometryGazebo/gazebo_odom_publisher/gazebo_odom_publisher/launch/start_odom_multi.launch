@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+ <node name="odom_pub_1" pkg="gazebo_odom_publisher" type="gazebo_odom_multi.py" output="screen">
+    <param name="robotName" type="string" value="ridge0"/>
+ </node>
+ <node name="odom_pub_2" pkg="gazebo_odom_publisher" type="gazebo_odom_multi.py" output="screen">
+    <param name="robotName" type="string" value="ridge1"/>
+ </node>
+</launch>
+
