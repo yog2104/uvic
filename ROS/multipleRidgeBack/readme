@@ -1,0 +1,5 @@
+This folder contains two files
+
+1. The ros package that launches multiple clearpath ridgeback robots. Like all ros packages, this one should be added to 
+    the corresponding catkin_ws and compiled.  
+2. The ipython notebook that describes how it was created and how to use it. 
