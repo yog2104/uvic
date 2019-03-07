@@ -1,0 +1,6 @@
+rosservice call /drone1/enable_motors true
+rosservice call /drone2/enable_motors true
+rosservice call /drone3/enable_motors true
+rosservice call /drone4/enable_motors true
+rosservice call /drone5/enable_motors true
+rosservice call /drone6/enable_motors true
