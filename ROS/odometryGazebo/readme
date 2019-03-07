@@ -1,0 +1,3 @@
+This package contains ROS publisher nodes that accept robot names as parameters in the launch file and publishes the positions
+of those robots in ROS. This is usefull if the navigation stack for a swarm robotics system is not being used. ACTS like a 
+localization system based on the service provided for Gazebo model states.
