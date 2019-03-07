@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+ <node name="odom_pub_1" pkg="gazebo_odom_publisher" type="gazebo_odom_multi.py" output="screen">
+    <param name="robotName" type="string" value="drone1"/>
+ </node>
+ <node name="odom_pub_2" pkg="gazebo_odom_publisher" type="gazebo_odom_multi.py" output="screen">
+    <param name="robotName" type="string" value="drone2"/>
+ </node>	
+ <node name="odom_pub_3" pkg="gazebo_odom_publisher" type="gazebo_odom_multi.py" output="screen">
+    <param name="robotName" type="string" value="drone3"/>
+ </node>
+ <node name="odom_pub_4" pkg="gazebo_odom_publisher" type="gazebo_odom_multi.py" output="screen">
+    <param name="robotName" type="string" value="drone4"/>
+ </node>
+ <node name="odom_pub_5" pkg="gazebo_odom_publisher" type="gazebo_odom_multi.py" output="screen">
+    <param name="robotName" type="string" value="drone5"/>
+ </node>
+ <node name="odom_pub_6" pkg="gazebo_odom_publisher" type="gazebo_odom_multi.py" output="screen">
+    <param name="robotName" type="string" value="drone6"/>
+ </node>
+ 
+</launch>
