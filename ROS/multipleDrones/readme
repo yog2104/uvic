@@ -1,0 +1,5 @@
+This folder contains the following:
+
+1. A ipython notebook showing how to launch a single "hector_quadrotor" drone in Ubuntu 16.04 + ROS kinetic.
+2. A ipython notebook describing how to create a package and use it to launch multiple quadrotors in GAZEBO+ROS.
+3. The resulting ros package.
